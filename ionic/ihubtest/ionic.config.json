@@ -1,0 +1,7 @@
+{
+  "name": "ihubtest",
+  "integrations": {
+    "capacitor": {}
+  },
+  "type": "react"
+}
