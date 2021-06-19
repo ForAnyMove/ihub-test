@@ -17,26 +17,35 @@ import {
   IonItem, 
   IonLabel,
 } from '@ionic/react';
+import { Redirect, Route } from 'react-router-dom';
+import { IonApp, IonRouterOutlet } from '@ionic/react';
+import { IonReactRouter } from '@ionic/react-router';
 import React from 'react';
 import './styles.css';
 import { logoApple, star } from 'ionicons/icons';
+import FirstScreen from '../FirstScreen';
+import SecondScreen from '../SecondScreen';
 import { pin, wifi, wine, warning, walk } from 'ionicons/icons';
-const slideOpts = {
+// import docImage from '../ionic/ihubtest/images/vrach-wom.jpg';
+
+const slideOpts1 = {
   initialSlide: 0,
   speed: 400
 };
+const a = true
+let checkSlide =true;
 const Home: React.FC = () => {
   return (
+    
     <IonPage>
-      
       <IonContent fullscreen>
           {/* slider witth doctor-info */}
-        <IonSlides pager={true} options={slideOpts}>
+          <IonSlides options={slideOpts1}>
       <IonSlide>
       <IonCard>
           <IonCardHeader>
-            <IonCardSubtitle>Имя</IonCardSubtitle>
-            <IonCardTitle>Card Title</IonCardTitle>
+            <IonCardSubtitle>Владимир Вселеченский</IonCardSubtitle>
+            {/* <IonCardTitle><img src={docImage}></img></IonCardTitle> */}
           </IonCardHeader>
           <IonCardContent>
             <p>Длительность консультации</p>
@@ -47,7 +56,7 @@ const Home: React.FC = () => {
       <IonCard>
           <IonCardHeader>
             <IonCardSubtitle>Елена Шимановская</IonCardSubtitle>
-            <IonCardTitle><img src="vrach-wom.jpg"></img></IonCardTitle>
+            <IonCardTitle><img src="ionic/ihubtest/images/vrach-wom.jpg"></img></IonCardTitle>
           </IonCardHeader>
 
           <IonCardContent>
@@ -58,89 +67,17 @@ const Home: React.FC = () => {
         </IonCard>
       </IonSlide>
     </IonSlides>
-    {/* slider with dates */}
-    <IonSlides pager={true} options={slideOpts}>
-      <IonSlide>
-      <IonCard button={true}>
-          <IonCardHeader>
-            <IonCardSubtitle>Сегодня</IonCardSubtitle>
-            <IonCardTitle>26</IonCardTitle>
-          </IonCardHeader>
-        </IonCard>
-      </IonSlide>
-      <IonSlide>
-      <IonCard button={true}>
-          <IonCardHeader>
-            <IonCardSubtitle>Ср</IonCardSubtitle>
-            <IonCardTitle>27</IonCardTitle>
-          </IonCardHeader>
-        </IonCard>
-      </IonSlide>
-      <IonSlide>
-      <IonCard button={true}>
-          <IonCardHeader>
-            <IonCardSubtitle>Ср</IonCardSubtitle>
-            <IonCardTitle>28</IonCardTitle>
-          </IonCardHeader>
-        </IonCard>
-      </IonSlide>
-      <IonSlide>
-      <IonCard button={true}>
-          <IonCardHeader>
-            <IonCardSubtitle>Ср</IonCardSubtitle>
-            <IonCardTitle>29</IonCardTitle>
-          </IonCardHeader>
-        </IonCard>
-      </IonSlide>
-      <IonSlide>
-      <IonCard button={true}>
-          <IonCardHeader>
-            <IonCardSubtitle>Ср</IonCardSubtitle>
-            <IonCardTitle>30</IonCardTitle>
-          </IonCardHeader>
-        </IonCard>
-      </IonSlide>
-      <IonSlide>
-      <IonCard button={true}>
-          <IonCardHeader>
-            <IonCardSubtitle>Ср</IonCardSubtitle>
-            <IonCardTitle>31</IonCardTitle>
-          </IonCardHeader>
-        </IonCard>
-      </IonSlide>
-    </IonSlides>
-    {/* slider with time */}
-    <IonSlides pager={true} options={slideOpts}>
-      <IonSlide>
-      <IonCard>
-          <IonCardHeader>
-            <IonCardSubtitle>Имя</IonCardSubtitle>
-            <IonCardTitle>Card Title</IonCardTitle>
-          </IonCardHeader>
-
-          <IonCardContent>
-            <p>Длительность консультации</p>
-            <p>50 минут</p>      </IonCardContent>
-        </IonCard>
-      </IonSlide>
-      <IonSlide>
-      <IonCard>
-          <IonCardHeader>
-            <IonCardSubtitle>Елена Шимановская</IonCardSubtitle>
-            <IonCardTitle><img src="vrach-wom.jpg"></img></IonCardTitle>
-          </IonCardHeader>
-
-          <IonCardContent>
-            <div><p>Длительность консультации</p>
-                <p>50 минут</p>
+    <Route component={a?FirstScreen:SecondScreen} />
+    <div>
+            <div>
+              <span>Дата</span>
             </div>
-           
-           
-      </IonCardContent>
-        </IonCard>
-      </IonSlide>
-    </IonSlides>
-        <IonButton expand="block" fill="outline">Outline + Block</IonButton>
+            <div>
+              <span>Время</span></div>
+            <div>
+              <IonButton expand="block" fill="outline">Записаться на бесплатную встречу</IonButton>
+            </div>
+        </div>
       </IonContent>
     </IonPage>
   );
