@@ -39,18 +39,25 @@ const slideOpts1 = {
   speed: 400
 };
 
-const a = false
-let checkSlide = true;
+let dateOfReg = "26";
+let timeOfReg = "18:30";
 
 const Home: React.FC = () => {
+  // cheked swipe slider for rerout content
+  let [showSkip, setSkip] = React.useState(true);
+
+  async function ionSlideChanged(event: CustomEvent) {
+    const target = event.target as HTMLIonSlidesElement;
+    setSkip(! await target.isEnd());
+  }
   return (
     <IonPage>
       <IonContent scrollY={false}>
         {/* slider witth doctor-info */}
-        <IonSlides 
+        <IonSlides
           options={slideOpts1}
-          // onionSlideDidChange={() => checkSlide=!checkSlide}
-          >
+          onIonSlideDidChange={ionSlideChanged}
+        >
           <IonSlide>
             <IonCard>
               <IonCardHeader>
@@ -81,15 +88,19 @@ const Home: React.FC = () => {
             </IonCard>
           </IonSlide>
         </IonSlides>
-        <Route component={a ? FirstScreen : SecondScreen} />
+        {/* route one of screens */}
+        <Route component={showSkip ? FirstScreen : SecondScreen} />
         <div>
           <div>
-            <span>Дата</span>
+            <p>Дата</p>
+            <p>{dateOfReg} {showSkip ? " мая" : " июня"}</p>
           </div>
           <div>
-            <span>Время</span></div>
+            <p>Время</p>
+            <p>{timeOfReg}</p>
+          </div>
           <div>
-            <IonButton  expand="block" fill="outline">Записаться на бесплатную встречу</IonButton>
+            <IonButton expand="block" fill="outline">Записаться на бесплатную встречу</IonButton>
           </div>
         </div>
       </IonContent>

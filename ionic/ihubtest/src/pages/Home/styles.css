@@ -1,7 +1,9 @@
 html.ios{
+   font-weight: 400;
    --ion-default-font: -apple-system, Montserrat, "Montserrat", "Montserrat", normal !important;
 }
 html.md{
+   font-weight: 400;
    --ion-default-font: Montserrat, "Montserrat", "Montserrat", normal !important;
 }
 .ioncardclass {
@@ -9,10 +11,6 @@ html.md{
 }
 .cart-subtitle {
    font-size: 8px;
-   white-space: nowrap;
-}
-.cart-title {
-   font-size: 16px;
    white-space: nowrap;
 }
 .cart-title {
@@ -27,11 +25,11 @@ html.md{
 }
 ion-content.ios.overscroll.hydrated{
    width: 100%;
-   height: 40%;
+   height: 30%;
    display:inline-block
 }
 ion-content.md.hydrated{
    width: 100%;
-   height: 40%;
+   height: 30%;
    display:inline-block
 }
