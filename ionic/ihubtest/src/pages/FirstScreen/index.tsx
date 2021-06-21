@@ -42,7 +42,7 @@ const slideOpts3 = {
 const Home: React.FC = () => {
   return (
     
-      <IonContent fullscreen>
+      <IonContent scrollY={false}>
       <p>Возможная дата</p>
     {/* slider with dates */}
     <IonSlides options={slideOpts2}>

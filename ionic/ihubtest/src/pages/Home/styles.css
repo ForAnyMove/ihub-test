@@ -1,17 +1,37 @@
-.ioncardclass{
+html.ios{
+   --ion-default-font: -apple-system, Montserrat, "Montserrat", "Montserrat", normal !important;
+}
+html.md{
+   --ion-default-font: Montserrat, "Montserrat", "Montserrat", normal !important;
+}
+.ioncardclass {
    width: 100%;
-   
 }
-.cart-subtitle{
-font-size: 8px;
-white-space: nowrap;
+.cart-subtitle {
+   font-size: 8px;
+   white-space: nowrap;
 }
-.cart-title{
+.cart-title {
    font-size: 16px;
    white-space: nowrap;
-   }
-.cart-title{
-      
-      font-size: 16px;
-      white-space: nowrap;
-      }
+}
+.cart-title {
+   font-size: 16px;
+   white-space: nowrap;
+}
+.doc-img{
+   width: 144px;
+}
+.class-content{
+   display:inline-block
+}
+ion-content.ios.overscroll.hydrated{
+   width: 100%;
+   height: 40%;
+   display:inline-block
+}
+ion-content.md.hydrated{
+   width: 100%;
+   height: 40%;
+   display:inline-block
+}
