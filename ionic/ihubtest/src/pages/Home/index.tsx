@@ -19,39 +19,105 @@ import {
   IonList,
   IonThumbnail,
 } from '@ionic/react';
-import { Redirect, Route } from 'react-router-dom';
+import { Redirect, Route, BrowserRouter as Router, } from 'react-router-dom';
 import { IonApp, IonRouterOutlet } from '@ionic/react';
 import { IonReactRouter } from '@ionic/react-router';
 import React from 'react';
 import './styles.css';
-import { logoApple, star } from 'ionicons/icons';
+import { logoApple, refresh, star } from 'ionicons/icons';
 import FirstScreen from '../FirstScreen';
 import SecondScreen from '../SecondScreen';
 import { pin, wifi, wine, warning, walk } from 'ionicons/icons';
 
+import firebase from 'firebase/app';
+import 'firebase/firestore';
+
+const fireBase = require("firebase");
+require("firebase/firestore");
+const config = {
+  apiKey: "AIzaSyBRm0fp3NaML-p9Wq9wecjOCfWs3NNwCHA",
+  authDomain: "ihub-test-app.firebaseapp.com",
+  projectId: "ihub-test-app",
+  storageBucket: "ihub-test-app.appspot.com",
+  messagingSenderId: "679386346201",
+  appId: "1:679386346201:web:caea3e978dec70984084c8"
+}
+
+firebase.initializeApp(config)
+let db = firebase.firestore();
+let docRef = db.collection("Ok").doc("LA");
 type Item = {
   src: string;
   text: string;
 };
 
-const slideOpts1 = {
-  initialSlide: 0,
-  speed: 400
-};
 
-let dateOfReg = "26";
-let timeOfReg = "18:30";
+var docOfReg = true;
+
+var dateOfReg = "26";
+var timeOfReg = "18:00";
+
+const invite = function () {
+  docRef.get().then((doc) => {
+    let fireInfoDTD = doc.data()
+
+    console.log(fireInfoDTD)
+
+  }).then(() => (console.log(docOfReg)));
+}
+
+invite();
+
+const checkOfCheck = () => {
+  const elDate = document.getElementsByClassName("cart-title");
+  for (let i = 0; i < elDate.length; i++) {
+    elDate[i].addEventListener("click", function () {
+      dateOfReg = String(elDate[i].textContent)
+      console.log(timeOfReg, dateOfReg);
+    }, false);
+  }
+  const elTime = document.getElementsByClassName("slide-title");
+  for (let i = 0; i < elTime.length; i++) {
+    elTime[i].addEventListener("click", function () {
+      timeOfReg = String(elTime[i].textContent);
+
+      console.log(timeOfReg, dateOfReg);
+    }, false);
+  }
+}
+
+
+console.log(dateOfReg, timeOfReg, docOfReg)
+
+  
 
 const Home: React.FC = () => {
-  // cheked swipe slider for rerout content
+
+  const slideOpts1 = {
+    initialSlide: 0,
+    speed: 400
+  };
+
+
+
+  // hook-chek of swipe slider for rerout content 
   let [showSkip, setSkip] = React.useState(true);
 
   async function ionSlideChanged(event: CustomEvent) {
     const target = event.target as HTMLIonSlidesElement;
     setSkip(! await target.isEnd());
   }
+
+  const fireGo = function () {
+
+    db.collection("Ok").doc("LA").set({
+      doctor: showSkip ? "Владимир" : "Елена",
+      date: dateOfReg,
+      time: timeOfReg
+    })
+  }
   return (
-    <IonPage>
+    <IonPage onClick={checkOfCheck}>
       <IonContent scrollY={false}>
         {/* slider witth doctor-info */}
         <IonSlides
@@ -81,6 +147,7 @@ const Home: React.FC = () => {
               </IonCardHeader>
 
               <IonCardContent>
+
                 <div><p>Длительность консультации</p>
                   <p>50 минут</p>
                 </div>
@@ -89,18 +156,21 @@ const Home: React.FC = () => {
           </IonSlide>
         </IonSlides>
         {/* route one of screens */}
+
         <Route component={showSkip ? FirstScreen : SecondScreen} />
         <div>
           <div>
             <p>Дата</p>
-            <p>{dateOfReg} {showSkip ? " мая" : " июня"}</p>
+            <p className="dateID">{!showSkip ? (dateOfReg + " июня") : (dateOfReg + " мая")}</p>
           </div>
           <div>
             <p>Время</p>
-            <p>{timeOfReg}</p>
+            <p>
+              {timeOfReg}
+            </p>
           </div>
           <div>
-            <IonButton expand="block" fill="outline">Записаться на бесплатную встречу</IonButton>
+            <IonButton onClick={fireGo} expand="block" fill="outline">Записаться на бесплатную встречу</IonButton>
           </div>
         </div>
       </IonContent>
@@ -108,4 +178,6 @@ const Home: React.FC = () => {
   );
 };
 
+
 export default Home;
+

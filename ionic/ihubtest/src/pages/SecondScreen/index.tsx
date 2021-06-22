@@ -23,8 +23,10 @@ import { IonReactRouter } from '@ionic/react-router';
 import React from 'react';
 import './styles.css';
 import { logoApple, star } from 'ionicons/icons';
-import Login from '.';
 import { pin, wifi, wine, warning, walk } from 'ionicons/icons';
+import { useHistory } from 'react-router-dom';
+import { State } from 'ionicons/dist/types/stencil-public-runtime';
+ 
 
 const slideOpts2 = {
   initialSlide: 0,
@@ -39,18 +41,22 @@ const slideOpts3 = {
   speed: 400
 };
 
+
+
 const Home: React.FC = () => {
+  
+ 
   return (
 
     <IonContent className="class-content" scrollY={false}>
       <p>Возможная дата</p>
       {/* slider with dates */}
-      <IonSlides options={slideOpts2}>
-        <IonSlide>
+      <IonSlides   options={slideOpts2}>
+        <IonSlide >
           <IonCard button={true} class="ioncardclass">
             <IonCardHeader>
               <IonCardSubtitle class="cart-subtitle">Сегодня</IonCardSubtitle>
-              <IonCardTitle class="cart-title">3</IonCardTitle>
+              <IonCardTitle  class="cart-title">3</IonCardTitle>
             </IonCardHeader>
           </IonCard>
         </IonSlide>

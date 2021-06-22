@@ -22,9 +22,6 @@ import { IonApp, IonRouterOutlet } from '@ionic/react';
 import { IonReactRouter } from '@ionic/react-router';
 import React from 'react';
 import './styles.css';
-import { logoApple, star } from 'ionicons/icons';
-import Login from '.';
-import { pin, wifi, wine, warning, walk } from 'ionicons/icons';
 
 const slideOpts2 = {
   initialSlide: 0,

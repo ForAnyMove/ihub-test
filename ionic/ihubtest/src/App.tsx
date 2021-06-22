@@ -1,9 +1,28 @@
 import { Redirect, Route } from 'react-router-dom';
-import { IonApp, IonRouterOutlet } from '@ionic/react';
+import { IonApp,
+  IonRouterOutlet,
+  IonButton,
+  IonIcon,
+  IonContent,
+  IonHeader,
+  IonPage,
+  IonTitle,
+  IonToolbar,
+  IonSlides,
+  IonSlide,
+  IonImg,
+  IonCard,
+  IonCardHeader,
+  IonCardSubtitle,
+  IonCardTitle,
+  IonCardContent,
+  IonItem,
+  IonLabel,
+  IonList,
+  IonThumbnail, } from '@ionic/react';
 import { IonReactRouter } from '@ionic/react-router';
 import Home from './pages/Home';
-import SecondScreen from './pages/SecondScreen';
-import Dashboard from './pages/Dashboard';
+import React from 'react';
 
 /* Core CSS required for Ionic components to work properly */
 import '@ionic/react/css/core.css';
@@ -23,16 +42,16 @@ import '@ionic/react/css/display.css';
 
 /* Theme variables */
 import './theme/variables.css';
+
+
 const App: React.FC = () => (
   <IonApp>
-    <IonReactRouter>
-      <IonRouterOutlet>
-      <Route exact path="/" component={Home} />
-      <Route exact path="/secondscreen" component={SecondScreen} />
-      <Route exact path="/dashboard" component={Dashboard} />
-      </IonRouterOutlet>
-    </IonReactRouter>
-  </IonApp>
-);
+  <IonReactRouter>
+    <IonRouterOutlet>
+    <Route exact path="/" component={Home} />
+    </IonRouterOutlet>
+  </IonReactRouter>
+</IonApp>)
+;
 
 export default App;
