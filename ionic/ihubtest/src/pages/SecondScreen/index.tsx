@@ -48,62 +48,50 @@ const Home: React.FC = () => {
  
   return (
 
-    <IonContent className="class-content" scrollY={false}>
-      <p>Возможная дата</p>
+    <IonContent className="content-wrapper" scrollY={false}>
+      <p className="prrbl-date">Возможная дата</p>
       {/* slider with dates */}
-      <IonSlides   options={slideOpts2}>
-        <IonSlide >
-          <IonCard button={true} class="ioncardclass">
-            <IonCardHeader>
-              <IonCardSubtitle class="cart-subtitle">Сегодня</IonCardSubtitle>
-              <IonCardTitle  class="cart-title">3</IonCardTitle>
-            </IonCardHeader>
-          </IonCard>
-        </IonSlide>
-        <IonSlide>
-          <IonCard button={true} class="ioncardclass">
-            <IonCardHeader>
-              <IonCardSubtitle class="cart-subtitle">Ср</IonCardSubtitle>
-              <IonCardTitle class="cart-title">4</IonCardTitle>
-            </IonCardHeader>
-          </IonCard>
-        </IonSlide>
-        <IonSlide>
-          <IonCard button={true} class="ioncardclass">
-            <IonCardHeader>
-              <IonCardSubtitle class="cart-subtitle">Чт</IonCardSubtitle>
-              <IonCardTitle class="cart-title">5</IonCardTitle>
-            </IonCardHeader>
-          </IonCard>
-        </IonSlide>
-        <IonSlide>
-          <IonCard button={true} class="ioncardclass">
-            <IonCardHeader>
-              <IonCardSubtitle class="cart-subtitle">Пт</IonCardSubtitle>
-              <IonCardTitle class="cart-title">6</IonCardTitle>
-            </IonCardHeader>
-          </IonCard>
-        </IonSlide>
-        <IonSlide>
-          <IonCard button={true} class="ioncardclass">
-            <IonCardHeader>
-              <IonCardSubtitle class="cart-subtitle">Пн</IonCardSubtitle>
-              <IonCardTitle class="cart-title">9</IonCardTitle>
-            </IonCardHeader>
-          </IonCard>
-        </IonSlide>
-        <IonSlide>
-          <IonCard button={true} class="ioncardclass">
-            <IonCardHeader>
-              <IonCardSubtitle class="cart-subtitle">Вт</IonCardSubtitle>
-              <IonCardTitle class="cart-title">10</IonCardTitle>
-            </IonCardHeader>
-          </IonCard>
-        </IonSlide>
+      <IonSlides   options={slideOpts2} className="date-slider">
+      <IonSlide className="slide-in-date-slider">
+      <div className="ioncardclass">
+        <div className="cart-subtitle">Сегодня</div>
+        <div className="cart-title">3</div>
+      </div>
+      </IonSlide>
+      <IonSlide className="slide-in-date-slider">
+      <div className="ioncardclass">
+        <div className="cart-subtitle">Пн</div>
+        <div className="cart-title">4</div>
+      </div>
+      </IonSlide>
+      <IonSlide className="slide-in-date-slider">
+      <div className="ioncardclass">
+        <div className="cart-subtitle">Вт</div>
+        <div className="cart-title">5</div>
+      </div>
+      </IonSlide>
+      <IonSlide className="slide-in-date-slider">
+      <div className="ioncardclass">
+        <div className="cart-subtitle">Ср</div>
+        <div className="cart-title">6</div>
+      </div>
+      </IonSlide>
+      <IonSlide className="slide-in-date-slider">
+      <div className="ioncardclass">
+        <div className="cart-subtitle">Чт</div>
+        <div className="cart-title">7</div>
+      </div>
+      </IonSlide>
+      <IonSlide className="slide-in-date-slider">
+      <div className="ioncardclass">
+        <div className="cart-subtitle">Пт</div>
+        <div className="cart-title">8</div>
+      </div>
+      </IonSlide>
       </IonSlides>
-      <p>Свободное время</p>
+      <p className="free-time">Свободное время</p>
       {/* slider with time */}
-      <IonSlides options={slideOpts3}>
+      <IonSlides options={slideOpts3} className="time-slider">
         <IonSlide class="slide-title">
           <div>9:00</div>
         </IonSlide>

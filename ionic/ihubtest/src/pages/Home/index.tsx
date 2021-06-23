@@ -89,7 +89,7 @@ const checkOfCheck = () => {
 
 console.log(dateOfReg, timeOfReg, docOfReg)
 
-  
+
 
 const Home: React.FC = () => {
 
@@ -120,62 +120,61 @@ const Home: React.FC = () => {
     <IonPage onClick={checkOfCheck}>
       <IonContent scrollY={false}>
         {/* slider witth doctor-info */}
-        <IonSlides
+        <IonSlides className="doc-slider"
           options={slideOpts1}
           onIonSlideDidChange={ionSlideChanged}
         >
-          <IonSlide>
-            <IonCard>
-              <IonCardHeader>
-                <IonCardSubtitle>Владимир Вселеченский</IonCardSubtitle>
-                <IonCardTitle>
-                  <IonImg className="doc-img" src='https://lh3.googleusercontent.com/pw/ACtC-3eYT2DmjVQueIFwcyO9re2Cr7fb6TlEqRBScHHE1dviG2G1SR5uXm8fa-86jDpFEpLfa9ruS42-g3aIQFZAk1McPzY7S5FjEPRYCBonWdFNbYDG8_kk6C9v6NzmHmYDpGPmIMfrK2t2FrIoqAQ5SElU=s288-no?authuser=0' />
-                </IonCardTitle>
-              </IonCardHeader>
-              <IonCardContent>
+          <IonSlide className="slide-in-slider">
+
+            <div className="doc-name">Владимир Вселеченский</div>
+            <div className="slide-wrapper">
+              <div className="img-wrapper">
+                <img className="doc-img" src='https://lh3.googleusercontent.com/pw/ACtC-3eYT2DmjVQueIFwcyO9re2Cr7fb6TlEqRBScHHE1dviG2G1SR5uXm8fa-86jDpFEpLfa9ruS42-g3aIQFZAk1McPzY7S5FjEPRYCBonWdFNbYDG8_kk6C9v6NzmHmYDpGPmIMfrK2t2FrIoqAQ5SElU=s288-no?authuser=0' />
+              </div>
+
+              <div className="session-time">
                 <p>Длительность консультации</p>
-                <p>50 минут</p></IonCardContent>
-            </IonCard>
+                <p className="bold-p">50 минут</p>
+              </div>
+            </div>
           </IonSlide>
-          <IonSlide>
-            <IonCard>
-              <IonCardHeader>
-                <IonCardSubtitle>Елена Шимановская</IonCardSubtitle>
-                <IonCardTitle>
-                  <IonImg className="doc-img" src='https://lh3.googleusercontent.com/pw/ACtC-3dQH5jAddC1k_wLTCR_NVNPP2_joGbmirBvL7kH4Afh5CMEwmtQJsBaf5B26T_-dT9hi_CXH2z3D5wqYBAeZfR_K6O-MuPcsGdG1ena4N4oi8L91Y65O_6jnzbr70VfVpaV2bVXaHlI-9KMvUU-JeZV=s288-no?authuser=0' />
-                </IonCardTitle>
-              </IonCardHeader>
+          <IonSlide className="slide-in-slider">
 
-              <IonCardContent>
-
-                <div><p>Длительность консультации</p>
-                  <p>50 минут</p>
-                </div>
-              </IonCardContent>
-            </IonCard>
+            <div className="doc-name">Елена Шимановская</div>
+            <div className="slide-wrapper">
+              <div className="img-wrapper">
+                <img className="doc-img" src='https://lh3.googleusercontent.com/pw/ACtC-3dQH5jAddC1k_wLTCR_NVNPP2_joGbmirBvL7kH4Afh5CMEwmtQJsBaf5B26T_-dT9hi_CXH2z3D5wqYBAeZfR_K6O-MuPcsGdG1ena4N4oi8L91Y65O_6jnzbr70VfVpaV2bVXaHlI-9KMvUU-JeZV=s288-no?authuser=0' />
+              </div>
+              <div className="session-time">
+                <p>Длительность консультации</p>
+                <p className="bold-p">50 минут</p>
+              </div>
+            </div>
           </IonSlide>
         </IonSlides>
         {/* route one of screens */}
 
         <Route component={showSkip ? FirstScreen : SecondScreen} />
-        <div>
-          <div>
-            <p>Дата</p>
-            <p className="dateID">{!showSkip ? (dateOfReg + " июня") : (dateOfReg + " мая")}</p>
+        <div className="result-content">
+          <div className="only-content-block">
+            <div className="content-block first">
+              <p>Дата</p>
+              <p className="dateID">{!showSkip ? "3 июня" : "26 мая"}</p>
+            </div>
+            <div className="content-block">
+              <p>Время</p>
+              <p className="timeID">
+                {showSkip ? "18:00" : "10:00"}
+              </p>
+            </div>
           </div>
           <div>
-            <p>Время</p>
-            <p>
-              {timeOfReg}
-            </p>
-          </div>
-          <div>
-            <IonButton onClick={fireGo} expand="block" fill="outline">Записаться на бесплатную встречу</IonButton>
+            <IonButton className="button" onClick={fireGo} expand="block" fill="outline">Записаться на бесплатную встречу</IonButton>
           </div>
         </div>
       </IonContent>
     </IonPage>
-  ); 
+  );
 };
 
 

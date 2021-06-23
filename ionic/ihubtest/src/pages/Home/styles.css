@@ -1,38 +1,142 @@
-html.ios{
+html.ios {
    font-weight: 400;
-   --ion-default-font: -apple-system, Montserrat, "Montserrat", "Montserrat", normal !important;
+   --ion-default-font: -apple-system, Montserrat, "Montserrat", "Montserrat", sans-serif !important;
 }
-html.md{
+html.md {
    font-weight: 400;
-   --ion-default-font: Montserrat, "Montserrat", "Montserrat", normal !important;
+   --ion-default-font: Montserrat, "Montserrat", "Montserrat", sans-serif !important;
 }
-.ioncardclass {
+.doc-slider {
+   max-height: 30%;
+}
+.slide-in-slider {
+   border-radius: 8px;
+   border: 1px solid #edeff2;
+   max-width: 90%;
    width: 100%;
-}
-.cart-subtitle {
-   font-size: 8px;
-   white-space: nowrap;
-}
-.cart-title {
-   font-size: 16px;
-   white-space: nowrap;
-}
-.doc-img{
-   width: 144px;
-}
-.class-content{
-   display:inline-block
-}
-ion-content.ios.overscroll.hydrated{
-   width: 100%;
-   height: 30%;
-   display:inline-block
-}
-ion-content.md.hydrated{
-   width: 100%;
-   height: 30%;
-   display:inline-block
+   padding: 0 0;
+   margin: 31px 20px 0;
+   max-height: 35%;
+   display: flex;
+   flex-direction: column;
 }
 
- 
- 
+.slide-wrapper {
+   display: flex;
+   flex-direction: row;
+   padding: 0 0 16px;
+}
+.img-wrapper {
+   max-width: 50%;
+}
+.swiper-slide img {
+   max-width: 80%;
+}
+.swiper-wrapper {
+   height: auto;
+}
+
+.session-time {
+   display: flex;
+   flex-direction: column;
+   justify-content: space-evenly;
+}
+
+.session-time p {
+   margin: 0;
+   font-size: 16px;
+}
+
+.session-time .bold-p {
+   font-weight: 700;
+}
+.doc-name {
+   font-size: 18px;
+   font-weight: 700;
+   padding: 16px 0;
+}
+
+.content-wrapper {
+   height: 40%;
+}
+
+.prrbl-date {
+   margin: 49px 0 16px 16px;
+   font-weight: 600;
+}
+.date-slider {
+   margin-left: 8px;
+   height: 92px;
+}
+.slide-in-date-slider {
+   height: 100%;
+   width: 86px !important;
+   border: 1px solid #edeff2;
+   border-radius: 6px;
+   margin: 0 8px;
+}
+.date-slider .swiper-wrapper {
+   height: 100%;
+}
+.date-slider .swiper-wrapper .cart-subtitle {
+   font-size: 16px;
+}
+.date-slider .swiper-wrapper .cart-title {
+   font-size: 24px;
+   font-weight: 700;
+}
+.free-time {
+   margin: 32px 0 20px 16px;
+   font-size: 16px;
+   font-weight: 600;
+}
+
+.time-slider {
+   height: 40px !important;
+   margin-left: 8px;
+   font-size: 24px;
+}
+
+.time-slider .swiper-slide {
+   height: 100%;
+   margin: 0 8px;
+   width: 87.3px !important;
+}
+
+.result-content {
+   margin: 0 16px;
+   border-radius: 4px;
+   border: 1px solid #edeff2;
+}
+.only-content-block {
+   display: flex;
+   justify-content: space-around;
+}
+.only-content-block .content-block{
+   text-align: center;
+   width: 100%;
+   margin: 15px 0
+}
+.only-content-block .first{
+   border-right: 1px solid #edeff2 ;
+}
+.only-content-block .content-block .dateID{
+   font-weight: 700;
+   font-size: 20px;
+}
+.only-content-block .content-block .timeID{
+   font-weight: 700;
+   font-size: 20px;
+}
+.button{
+   margin: 0 12px 24px;
+   background-color: #33BDE4;
+   border: 1px solid #33BDE4;
+   border-radius: 4px;
+   color: #fff;
+   font-size: 12px;
+   font-weight: 600;
+}
+.button-native{
+   border: none !important;
+}
